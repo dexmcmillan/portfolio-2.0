@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  h3 {
+    @apply text-4xl my-3;
+  }
+
+  #app {
+    @apply grid gap-4 lg:grid-cols-4 grid-cols-1 lg:py-14 lg:px-24 py-5 px-8
+  }
+
+  p, li {
+    @apply mb-2 w-full
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  .header {
+    @apply invisible lg:visible
+  }
+
+  .pageTitle {
+    @apply md:text-8xl text-6xl absolute md:fixed
+  }
+
+  #splashText {
+    @apply md:text-5xl text-4xl lg:leading-tight leading-normal
+  }
+}
+
+
+#splashText {
+  font-family: dunbar-tall, sans-serif !important;
+}
+
+html {
+  background-color:#ffeac4;
+}
+
+#app {
+  font-family: ff-real-headline-pro, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  font-size:10pt;
+}
+
+#splash {
+  margin-left: auto;
+  margin-right: auto;
+  text-align:left;
+}
+
+#title {
+  line-height:95%;
+  text-align:left;
+  pointer-events: none;
+  margin-left:-2px;
+}
+
+h1 {
+  color: #2c3e50;
+  font-family: alfarn-2, serif !important;
+  font-weight:bold;
+  font-size: 45pt;
+}
+
+h2 {
+  line-height: 130%;
+}
+
+.pageTitle {
+  right:0px;
+  top:0px;
+  opacity:0.3;
+  text-align:right !important;
+  color: #2c3e50;
+  font-family: alfarn-2, serif !important;
+  font-weight:bold;
+  line-height:70%;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(-180deg);
+  letter-spacing:0.05em;
+}
+
+#subtitle {
+  line-height:100%;
+  font-size:14pt;
+  text-align:left;
+}
+
+.nuxt-link-active {
+  opacity: 1.0 !important;
+}
+
+.header {
+  text-align:left;
+  font-size:50pt;
+  font-family: stolzl, sans-serif;
+  line-height:130%;
+  color: #2c3e50;
+}
+
+p {
+  text-align:left;
+}
+
+li {
+  margin-left: 15px;
+  padding-left:10px;
+}
+
+p > a,
+li > a {
+  border-bottom: 2px solid #2c3e50;
+}
+
+.ideaBox {
+  padding:10px;
+  margin-bottom:20px;
+}
