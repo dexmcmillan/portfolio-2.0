@@ -15,4 +15,18 @@ class JobViewSet(viewsets.ModelViewSet):
 class TagViewSet(viewsets.ModelViewSet):
     serializer_class = TagSerializer
     queryset = Tag.objects.all()
+
+# Tag filtered viewsets.
+class FilteredViewSet(viewsets.ModelViewSet):
+    serializer_class = ProjectSerializer
+    
+    def get_queryset(self):
+        tag_type = self.request.get_full_path().replace("api/projects/", "").replace("/", "")
         
+        print(self.request.GET.get('q', ''))
+        
+        type_id = Tag.objects.get(name=tag_type).id
+
+        queryset = Project.objects.all().filter(tags__id=type_id).order_by('-date')
+
+        return queryset

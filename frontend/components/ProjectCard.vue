@@ -1,7 +1,7 @@
 <template>
     <div>
       <div class="flex my-1">
-        <div class="tag p-1" v-for="tag in project.tags" v-bind:key="tag.id">{{ tag.name }}</div>
+        <TagTab v-for="tag in project.tags" v-bind:key="tag.id" :tag="tag" />
       </div>
       <h2 id="ideaHeader"><a :href="project.link" target="_blank">{{ project.title }}</a></h2>
       <span style="opacity:0.8">{{ project.publication }} / {{ $format_date(project.date) }}</span>
@@ -25,17 +25,6 @@
 h2 {
   font-size: 24pt;
   font-weight:bold;
-}
-
-.tag {
-  border-radius: 3px;
-  width:fit-content;
-  margin: 2px;
-  float:left;
-  background-color:#2c3e50;
-  color:white;
-  line-height:100%;
-  font-size:9pt;
 }
 
 </style>

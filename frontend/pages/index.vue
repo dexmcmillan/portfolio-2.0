@@ -1,3 +1,8 @@
+<script setup>
+  const { data: tags } = await useFetch(`http://localhost:8000/api/tags/`);
+  const shown = useState('shown', () => tags.value.map(x => x.name))
+</script>
+
 <template>
     <div id="app">
       <Header class=""></Header>
@@ -10,7 +15,6 @@
   
   export default {
     name: "AboutPage",
-    
   }
   </script>
   

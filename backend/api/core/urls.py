@@ -1,6 +1,6 @@
-from django.urls import path, include
+from django.urls import path, include, re_path
 from rest_framework.routers import DefaultRouter
-from .views import ProjectViewSet, JobViewSet, TagViewSet
+from .views import *
 
 router = DefaultRouter()
 router.register(r'projects', ProjectViewSet)
@@ -9,4 +9,5 @@ router.register(r'tags', TagViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),
+    # re_path(r'^projects/.*', FilteredViewSet.as_view({'get': 'list'})),
 ]
