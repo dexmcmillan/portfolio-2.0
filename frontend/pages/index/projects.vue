@@ -8,7 +8,11 @@
   <div class="col-span-3">
     <div class="grid grid-cols-1 md:gap-10">
       <div class="col-span-4 pageTitle">work</div>
-      <project-card v-for="project in filtered_projects" v-bind:key="project.id" v-bind:project="project" />
+      
+      <TransitionGroup name="list">
+        <project-card v-for="project in filtered_projects" v-bind:key="project.id" v-bind:project="project" />
+      </TransitionGroup>
+      <!-- <div v-if="filtered_projects.length <= 0">There's nothing here! Please choose tags on the left to display work in that category.</div> -->
     </div>
   </div>
 </template>
@@ -18,17 +22,12 @@
     name: "StoriesPage",
     computed: {
       filtered_projects () {
-        console.log("Shown projects are updated!")
-        console.log(this.shown)
-        // const filtered = this.projects.filter((x) => x.tags.map(x => x.name).includes("audio"))
-        const filtered = this.projects.filter((x) => x.tags.map(x => x.name).some(r=> this.shown.includes(r)))
-        console.log(filtered)
-
-        return filtered
+        return this.projects.filter((x) => x.tags.map(x => x.name).some(r=> this.shown.includes(r)))
       },
     }
   }
 </script>
 
 <style>
+
 </style>

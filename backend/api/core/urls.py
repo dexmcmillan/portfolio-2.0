@@ -9,5 +9,4 @@ router.register(r'tags', TagViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),
-    # re_path(r'^projects/.*', FilteredViewSet.as_view({'get': 'list'})),
 ]

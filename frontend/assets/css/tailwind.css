@@ -88,6 +88,7 @@ h2 {
   text-orientation: mixed;
   transform: rotate(-180deg);
   letter-spacing:0.05em;
+  pointer-events: none;
 }
 
 #subtitle {
@@ -96,7 +97,7 @@ h2 {
   text-align:left;
 }
 
-.nuxt-link-active {
+.router-link-active {
   opacity: 1.0 !important;
 }
 
@@ -120,6 +121,10 @@ li {
 p > a,
 li > a {
   border-bottom: 2px solid #2c3e50;
+}
+
+p > a:hover {
+  opacity:0.5;
 }
 
 .ideaBox {
@@ -147,4 +152,22 @@ li > a {
   background-color:#ffeac4;
   color:#2c3e50;
   border: 1px solid #2c3e50;
+}
+
+.tag:hover,
+a:hover {
+  opacity:0.5;
+}
+
+/* List animations */
+.list-move,
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
+}
+
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
 }
