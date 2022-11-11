@@ -1,6 +1,6 @@
 <script setup>
-  const { data: tags } = await useFetch(`http://localhost:8000/api/tags/`);
-  const { data: projects } = await useFetch(`http://localhost:8000/api/projects/`)
+  const { data: tags } = await useFetch(`http://35.183.248.100/api/tags/`);
+  const { data: projects } = await useFetch(`http://35.183.248.100/api/projects/`)
   const shown = useState('shown')
 </script>
 

@@ -1,5 +1,5 @@
 <script setup>
-  const { data: tags } = await useFetch(`http://localhost:8000/api/tags/`);
+  const { data: tags } = await useFetch(`http://35.183.248.100/api/tags/`);
 </script>
 
 

@@ -1,5 +1,5 @@
 <script setup>
-  const { data: jobs } = await useFetch('http://localhost:8000/api/jobs/')
+  const { data: jobs } = await useFetch('http://35.183.248.100/api/jobs/')
   const shown = useState('shown')
 </script>
 
