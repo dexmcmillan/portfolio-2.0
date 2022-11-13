@@ -1,6 +1,9 @@
 <script setup>
-  const { data: jobs } = await useFetch('http://35.183.248.100/api/jobs/')
-  const shown = useState('shown')
+  const { data: jobs } = await useFetch('https://d45esux869ize.cloudfront.net/api/jobs/')
+  const { data: tags } = await useFetch(`https://d45esux869ize.cloudfront.net/api/tags/`);
+  const shown = await useShown()
+
+  const filtered_jobs = computed(() => jobs.value.filter((x) => x.tags.map(x => x.name).some(r=> shown.value.includes(r))))
 </script>
 
 <template>
@@ -12,20 +15,6 @@
     </TransitionGroup>
   </div>
 </template>
-
-<script>
-
-export default {
-  name: "AboutPage",
-  computed: {
-    filtered_jobs () {
-      const filtered = this.jobs.filter((x) => x.tags.map(x => x.name).some(r=> this.shown.includes(r)))
-
-      return filtered
-    },
-    }
-}
-</script>
 
 <style>
 

@@ -1,5 +1,5 @@
 <script setup>
-  const { data: tags } = await useFetch(`http://35.183.248.100/api/tags/`);
+  const { data: tags } = await useFetch(`https://d45esux869ize.cloudfront.net/api/tags/`);
 </script>
 
 
@@ -24,13 +24,6 @@
     </div>
   </div>
 </template>
-
-<script> 
-  export default {
-    name: 'Header',
-      
-  }
-</script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>

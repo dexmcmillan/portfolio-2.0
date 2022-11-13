@@ -20,8 +20,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ["DJANGO_SECRET"]
+# @TODO Hide this!
+# SECRET_KEY = os.environ.get("DJANGO_SECRET")
+with open(f'{BASE_DIR}/django_secret.txt', 'r') as f:
+    SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -54,9 +56,11 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000',
-)
+# CORS_ORIGIN_WHITELIST = (
+#     'http://localhost:3000',
+# )
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = "api.urls"
 
@@ -103,9 +107,9 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Changed this recently!
-DEFAULT_PERMISSION_CLASSES = [
-        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
-    ]
+# DEFAULT_PERMISSION_CLASSES = [
+#         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+#     ]
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/

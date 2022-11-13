@@ -1,7 +1,10 @@
 <script setup>
-  const { data: tags } = await useFetch(`http://35.183.248.100/api/tags/`);
-  const { data: projects } = await useFetch(`http://35.183.248.100/api/projects/`)
-  const shown = useState('shown')
+  const { data: tags } = await useFetch(`https://d45esux869ize.cloudfront.net/api/tags/`);
+  const { data: projects } = await useFetch(`https://d45esux869ize.cloudfront.net/api/projects/`)
+  const shown = await useShown()
+
+  const filtered_projects = computed(() => projects.value.filter((x) => x.tags.map(x => x.name).some(r=> shown.value.includes(r))))
+
 </script>
 
 <template>
@@ -16,17 +19,6 @@
     </div>
   </div>
 </template>
-
-<script>
-  export default {
-    name: "StoriesPage",
-    computed: {
-      filtered_projects () {
-        return this.projects.filter((x) => x.tags.map(x => x.name).some(r=> this.shown.includes(r)))
-      },
-    }
-  }
-</script>
 
 <style>
 
