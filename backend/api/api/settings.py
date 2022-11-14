@@ -26,10 +26,9 @@ with open(f'{BASE_DIR}/django_secret.txt', 'r') as f:
     SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-
 
 # Application definition
 
@@ -56,9 +55,11 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-# CORS_ORIGIN_WHITELIST = (
-#     'http://localhost:3000',
-# )
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000', "https://data.dextermcmillan.com/"
+)
+
+CSRF_TRUSTED_ORIGINS = ["http://api-dev2222.us-east-2.elasticbeanstalk.com/"]
 
 CORS_ORIGIN_ALLOW_ALL = True
 
@@ -94,6 +95,7 @@ DATABASES = {
 }
 
 
+
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -127,7 +129,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

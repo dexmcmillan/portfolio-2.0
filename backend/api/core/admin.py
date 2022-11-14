@@ -8,4 +8,3 @@ class ProjectAdmin(admin.ModelAdmin):
 admin.site.register(Project, ProjectAdmin)
 admin.site.register(Job)
 admin.site.register(Tag)
-

@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from .serializers import ProjectSerializer, JobSerializer, TagSerializer
 from .models import Project, Job, Tag
 from rest_framework import viewsets

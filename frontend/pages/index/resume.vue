@@ -1,6 +1,6 @@
 <script setup>
-  const { data: jobs } = await useFetch('https://d45esux869ize.cloudfront.net/api/jobs/')
-  const { data: tags } = await useFetch(`https://d45esux869ize.cloudfront.net/api/tags/`);
+  const { data: jobs } = await useFetch('https://data.dextermcmillan.com/api/jobs/')
+  const { data: tags } = await useFetch(`https://data.dextermcmillan.com/api/tags/`);
   const shown = await useShown()
 
   const filtered_jobs = computed(() => jobs.value.filter((x) => x.tags.map(x => x.name).some(r=> shown.value.includes(r))))

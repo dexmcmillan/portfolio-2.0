@@ -1,4 +1,4 @@
 export default async function () {
-    const { data: tags } = await useFetch(`https://d45esux869ize.cloudfront.net/api/tags/`);
+    const { data: tags } = await useFetch(`https://data.dextermcmillan.com/api/tags/`);
     return useState('shown', () => tags.value.map(x => x.name))
 }

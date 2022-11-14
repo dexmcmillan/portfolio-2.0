@@ -1,6 +1,6 @@
 <script setup>
-  const { data: tags } = await useFetch(`https://d45esux869ize.cloudfront.net/api/tags/`);
-  const { data: projects } = await useFetch(`https://d45esux869ize.cloudfront.net/api/projects/`)
+  const { data: tags } = await useFetch(`https://data.dextermcmillan.com/api/tags/`);
+  const { data: projects } = await useFetch(`https://data.dextermcmillan.com/api/projects/`)
   const shown = await useShown()
 
   const filtered_projects = computed(() => projects.value.filter((x) => x.tags.map(x => x.name).some(r=> shown.value.includes(r))))
@@ -9,7 +9,7 @@
 
 <template>
   <div class="col-span-3">
-    <div class="grid grid-cols-1 md:gap-10">
+    <div class="grid grid-cols-1 md:gap-10 gap-5">
       <div class="col-span-4 pageTitle">work</div>
       
       <TransitionGroup name="list">
