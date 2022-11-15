@@ -6,6 +6,7 @@ router = DefaultRouter()
 router.register(r'projects', ProjectViewSet)
 router.register(r'jobs', JobViewSet)
 router.register(r'tags', TagViewSet)
+router.register(r'images', ImageViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),

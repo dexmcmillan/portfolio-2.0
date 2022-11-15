@@ -1,5 +1,5 @@
 <script setup>
-  const { data: tags } = await useFetch(`https://data.dextermcmillan.com/api/tags/`);
+  const { data: tags } = await getTags()
 </script>
 
 

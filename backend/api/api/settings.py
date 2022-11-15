@@ -56,10 +56,9 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000', "https://data.dextermcmillan.com/"
+    'http://localhost:3000',
+    'http://127.0.0.1:8000'
 )
-
-CSRF_TRUSTED_ORIGINS = ["http://api-dev2222.us-east-2.elasticbeanstalk.com/"]
 
 CORS_ORIGIN_ALLOW_ALL = True
 

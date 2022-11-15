@@ -1,6 +1,5 @@
 <script setup>
-  const { data: tags } = await useFetch(`https://data.dextermcmillan.com/api/tags/`);
-  const { data: projects } = await useFetch(`https://data.dextermcmillan.com/api/projects/`)
+  const { data: projects } = await getProjects()
   const shown = await useShown()
 
   const filtered_projects = computed(() => projects.value.filter((x) => x.tags.map(x => x.name).some(r=> shown.value.includes(r))))

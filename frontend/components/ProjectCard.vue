@@ -7,7 +7,8 @@
       <span style="opacity:0.8">{{ project.publication }}<span v-if="project.publication"> / </span>{{ $format_date(project.date) }}</span>
       <p class="ideaBody mt-3" v-html="project.description"></p>
       <div v-if="project.embed" v-html="project.embed" class="p-2 md:px-5"></div>
-      <div v-if="project.picture" class="p-2 md:px-5"><img :src="project.picture" /></div>
+      <div v-if="project.pictures.length == 1" class="p-2 md:px-5"><img :src="project.pictures[0].file" /></div>
+      <photo-grid v-else class="p-2 md:px-5" :pictures="project.pictures" />
   </div>
 </template>
 

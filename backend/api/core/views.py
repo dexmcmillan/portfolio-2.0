@@ -1,5 +1,5 @@
-from .serializers import ProjectSerializer, JobSerializer, TagSerializer
-from .models import Project, Job, Tag
+from .serializers import *
+from .models import *
 from rest_framework import viewsets
 
 # Create your views here.
@@ -14,3 +14,7 @@ class JobViewSet(viewsets.ModelViewSet):
 class TagViewSet(viewsets.ModelViewSet):
     serializer_class = TagSerializer
     queryset = Tag.objects.all()
+    
+class ImageViewSet(viewsets.ModelViewSet):
+    serializer_class = ImageSerializer
+    queryset = Image.objects.all()
