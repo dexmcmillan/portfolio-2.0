@@ -10,8 +10,8 @@ class Tag(models.Model):
     
 class Image(models.Model):
     title = models.CharField(max_length=255)
-    caption = models.TextField(max_length=600)
-    file = models.ImageField(blank=True)
+    caption = models.TextField(max_length=600, blank=True)
+    file = models.ImageField()
     
     def __str__(self):
         return str(self.title)
@@ -23,7 +23,7 @@ class Project(models.Model):
     description = models.TextField(max_length=10000)
     embed = models.TextField(max_length=10000, blank=True)
     link = models.CharField(max_length=200, default="", blank=True)
-    pictures = models.ManyToManyField(Image)
+    pictures = models.ManyToManyField(Image, blank=True)
     tags = models.ManyToManyField(Tag)
     show = models.BooleanField(blank=True, default=True)
 

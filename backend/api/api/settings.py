@@ -20,13 +20,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# @TODO Hide this!
 # SECRET_KEY = os.environ.get("DJANGO_SECRET")
 with open(f'{BASE_DIR}/django_secret.txt', 'r') as f:
     SECRET_KEY = f.read().strip()
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# This may cause issues with css/html loading for admin page. Turn off when developing on localhost.
+# For reference: https://stackoverflow.com/questions/35557129/css-not-loading-wrong-mime-type-django
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -127,8 +128,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_URL = "static/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
