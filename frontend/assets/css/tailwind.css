@@ -31,6 +31,10 @@
   #splashText {
     @apply md:text-5xl text-4xl lg:leading-tight leading-normal
   }
+
+  v-icon {
+    @apply my-1
+  }
 }
 
 
