@@ -29,12 +29,12 @@ export default defineNuxtConfig({
     vite: {
 
         define: {
-            'process.env.DEBUG': true,
+            'process.env.DEBUG': false,
         },
         
     },
 
-    ssr: true,
+    ssr: false,
     
 
     
